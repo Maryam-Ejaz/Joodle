@@ -1,7 +1,7 @@
 {
   "name": "sticky_notes-main",
   "version": "1.0.0",
-  "description": "https://github.com/malikkotb/sticky_notes/assets/50169361/3e8a12b1-29eb-4b44-8509-1b4e79bc2c3d",
+  "description": "A Note taking app",
   "main": "src/index.js",
   "scripts": {
     "dev": "next dev",
