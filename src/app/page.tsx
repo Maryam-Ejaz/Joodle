@@ -10,9 +10,28 @@ export const dynamic = "auto",
   runtime = "nodejs",
   preferredRegion = "auto";
 
+  async function createAdminAccount() {
+    const pb = new PocketBase("https://joodle-pocketbase-production.up.railway.app/");
+  
+    try {
+      // Attempt to create the first admin account
+      const adminData = await pb.admins.create({
+        email: "mariam.ejaz12@gmail.com",
+        password: "55667788",
+        passwordConfirm: "55667788",
+      });
+  
+      console.log("Admin account created successfully:", adminData);
+    } catch (error) {
+      console.error("Error creating admin account:", error);
+    }
+  }
+
 async function getNotes() {
-  const pb = new PocketBase("https://joodle-pocketbase-production.up.railway.app/");
-  const data = await pb.collection("notes").getList();
+
+  const pb = new PocketBase("https://pocketbase-production-782d.up.railway.app/");
+
+  const data = await pb.collection("notes").getList(1, 50);
   return data?.items as any[];
 }
 
