@@ -11,8 +11,8 @@ export const dynamic = "auto",
   preferredRegion = "auto";
 
 async function getNotes() {
-  const pb = new PocketBase("https://joodle.pockethost.io/");
-  const data = await pb.collection("notes").getList(1, 50);
+  const pb = new PocketBase("https://joodle-pocketbase-production.up.railway.app/");
+  const data = await pb.collection("notes").getList();
   return data?.items as any[];
 }
 

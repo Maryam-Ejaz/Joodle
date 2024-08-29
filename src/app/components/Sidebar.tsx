@@ -34,7 +34,7 @@ export default function Sidebar() {
 
   async function createNote(color: any) {
     console.log("create note");
-    const pb = new PocketBase("https://joodle.pockethost.io/");
+    const pb = new PocketBase("https://joodle-pocketbase-production.up.railway.app/");
 
     // example create data
     const data = {

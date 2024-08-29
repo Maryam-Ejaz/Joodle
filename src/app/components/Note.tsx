@@ -36,9 +36,11 @@ export default function Note({ note, bgColor, noteId }: any) {
   function editNote() {
     if (showTextArea) {
       handleBlur(); // Call handleBlur if the textarea is already visible
+      router.refresh();
     } else {
       console.log("edit the note");
       setShowTextArea(true);
+
     }
   }
 
@@ -51,7 +53,7 @@ export default function Note({ note, bgColor, noteId }: any) {
     else {
       console.log("Textarea lost focus!");
       console.log("Note ID: " + noteId);
-      const pb = new PocketBase("https://joodle.pockethost.io/");
+      const pb = new PocketBase("https://joodle-pocketbase-production.up.railway.app/");
 
       // Example update data
       const data = {
@@ -68,7 +70,7 @@ export default function Note({ note, bgColor, noteId }: any) {
   async function handleDelete() {
     setDeleteButtonClicked(true); 
     console.log("Delete the note");
-    const pb = new PocketBase("https://joodle.pockethost.io/");
+    const pb = new PocketBase("https://joodle-pocketbase-production.up.railway.app/");
 
     await pb.collection("notes").delete(noteId);
     router.refresh();
