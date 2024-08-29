@@ -34,8 +34,35 @@ export default function Note({ note, bgColor, noteId }: any) {
   const router = useRouter();
 
   function editNote() {
-    console.log("edit the note");
-    setShowTextArea(!showTextArea);
+    if (showTextArea) {
+      handleBlur(); // Call handleBlur if the textarea is already visible
+    } else {
+      console.log("edit the note");
+      setShowTextArea(true);
+    }
+  }
+
+  async function handleBlur() {
+    // Prevent update if delete button was clicked
+    if (deleteButtonClicked) {
+      setDeleteButtonClicked(false);
+      return;
+    }
+    else {
+      console.log("Textarea lost focus!");
+      console.log("Note ID: " + noteId);
+      const pb = new PocketBase("https://joodle.pockethost.io/");
+
+      // Example update data
+      const data = {
+        content: textContent,
+      };
+
+      await pb.collection("notes").update(noteId, data);
+      setShowTextArea(!showTextArea);
+      router.refresh();
+
+    }
   }
 
   async function handleDelete() {
