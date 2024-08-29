@@ -41,7 +41,7 @@ export default function Note({ note, bgColor, noteId }: any) {
   async function handleDelete() {
     setDeleteButtonClicked(true); 
     console.log("Delete the note");
-    const pb = new PocketBase("http://127.0.0.1:8090");
+    const pb = new PocketBase("https://joodle.pockethost.io/");
 
     await pb.collection("notes").delete(noteId);
     router.refresh();

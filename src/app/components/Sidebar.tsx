@@ -34,7 +34,7 @@ export default function Sidebar() {
 
   async function createNote(color: any) {
     console.log("create note");
-    const pb = new PocketBase("http://127.0.0.1:8090");
+    const pb = new PocketBase("https://joodle.pockethost.io/");
 
     // example create data
     const data = {
@@ -44,7 +44,7 @@ export default function Sidebar() {
     await pb.collection("notes").create(data);
 
     // reset title and content
-    setContent("This is a sticky.");
+    setContent("This is a note.");
     router.refresh();
   }
 
