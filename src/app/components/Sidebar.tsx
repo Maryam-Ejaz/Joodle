@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { BsPlus } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Goo from 'gooey-react'
+
 import "./Sidebar.scss";
 
 const bouncingVariant = {
