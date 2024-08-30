@@ -4,20 +4,34 @@
 
 @layer base {
     body {
-      @apply bg-gray-100; /* Example background color */
+      @apply bg-gray-200; /* Example background color */
     }
   }
 
 @layer components {
 
+  .sidebar-color {
+    @apply relative flex 
+    rounded-3xl h-5 w-5 
+    mb-7 items-center mx-auto justify-center cursor-pointer
+}
+
     .sidebar-icon {
         @apply relative flex items-center justify-center
         h-12 w-12 mt-2 mb-2 mx-auto 
         bg-black text-white
-        /* hover:bg-orange-500 hover:bg-opacity-70 hover:text-gray-900 */
         rounded-3xl
         cursor-pointer;
     }
+
+    .sidebar-tooltip {
+      @apply absolute w-auto p-2 m-2 min-w-max left-14
+      rounded-md shadow-md
+      z-10
+      text-white bg-gray-900
+      text-xs font-bold
+      transition-all duration-100 scale-0 origin-left;
+  }
 
 
 }
