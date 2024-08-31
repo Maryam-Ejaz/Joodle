@@ -12,7 +12,7 @@ import { animateGooeyToCard } from "./components/Animations/morphAnimation";
 async function fetchNotes(query: string = '') {
   const pb = new PocketBase("https://pocketbase-production-782d.up.railway.app/");
   const filter = query ? `title ~ "${query}" || content ~ "${query}"` : '';
-  const response = await pb.collection("notes").getList(1, 50, { filter, sort: '-created,title' });
+  const response = await pb.collection("notes").getList(1, 50, { filter, sort: '-created' });
   return response.items as any[];
 }
 

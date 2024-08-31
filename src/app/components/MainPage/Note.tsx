@@ -67,7 +67,7 @@ export default function Note({ note, bgColor, noteId, refreshNotes }: any) {
       initial={{ x: -1000, width: "16rem", height: "16rem", flexWrap: "wrap" }} // Initial size and wrap
       animate={{
         x: 0,
-        width: isExpanded ? (window.innerWidth > 800 ? "40rem" : "20rem") : "16rem",
+        width: isExpanded ? (window.innerWidth > 800 ? "40rem" : "16rem") : "16rem",
         height: isExpanded ? (window.innerWidth > 800 ? "16rem" : "40rem") : "16rem",
         flexWrap: isExpanded ? "wrap" : "nowrap", // Flex wrap animation
       }}
