@@ -3,35 +3,50 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-      @apply bg-gray-200; /* Example background color */
-    }
+  body {
+    @apply bg-light-background dark:bg-dark-background;
+    transition: background-color 0.3s ease;
   }
+}
 
 @layer components {
 
   .sidebar-color {
-    @apply relative flex 
-    rounded-3xl h-5 w-5 
-    mb-7 items-center mx-auto justify-center cursor-pointer
-}
-
-    .sidebar-icon {
-        @apply relative flex items-center justify-center
-        h-12 w-12 mt-2 mb-2 mx-auto 
-        bg-black text-white
-        rounded-3xl
-        cursor-pointer;
-    }
-
-    .sidebar-tooltip {
-      @apply absolute w-auto p-2 m-2 min-w-max left-14
-      rounded-md shadow-md
-      z-10
-      text-white bg-gray-900
-      text-xs font-bold
-      transition-all duration-100 scale-0 origin-left;
+    @apply relative flex rounded-3xl h-5 w-5 mb-7 items-center mx-auto justify-center cursor-pointer
   }
 
+  .sidebar-icon {
+    @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto bg-black text-white rounded-3xl cursor-pointer;
+  }
+
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md z-10 text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+  }
+
+  .searchBar {
+    @apply bg-light-background dark:bg-gray-900;
+    /* Custom shadows */
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .3),
+      -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+  }
+
+  .dark .searchBar {
+    /* Dark mode shadows */
+    box-shadow:
+      4px 4px 6px 0 rgba(169, 179, 213, 0.123),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0),
+      inset -4px -4px 6px 0 rgba(41, 25, 25, 0.2),
+      inset 4px 4px 6px 0 rgba(31, 28, 28, 0.2);
+  }
+
+  .sidebar-icon {
+    @apply bg-black dark:bg-gray-900;
+  }
+
+  .app-title {
+    @apply text-dark-background dark:text-light-background;
+  }
 
 }

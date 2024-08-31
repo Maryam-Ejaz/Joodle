@@ -1,9 +1,114 @@
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[13].use[5]!./src/app/components/Sidebar.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/app/components/Buttons/ThemeToggleButton.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik+Vinyl&display=swap');
+
+.theme-toggle-container {
+    width: 80%;
+    height: 4%;
+    margin: 0;
+    margin-left: 8px;
+    display: flex;
+    border-radius: 70px;
+    padding: 2px;
+    box-shadow: 10px 10px 10px #1f2937, 0px -8px 10px rgba(32, 32, 32, 0.453), -5px -5px 15px #212834 inset, 15px 15px 50px #161f29 inset;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.theme-toggle-border {
+    width: 100%;
+    height: 100%;
+    background-color: #1f2937;
+    box-shadow: 5px 5px 10px #1f2937 inset, -4px -10px 10px #1d2736 inset;
+    border-radius: 70px;
+    margin: auto;
+    display: flex;
+    align-items: end;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.theme-toggle-button {
+    margin: auto;
+
+    width: 30%;
+    height: 75%;
+    background-color: #1f2937;
+    border: 1px solid #1f2937 ;
+    box-shadow: 10px 10px 15px #1f29379d, 
+    -10px -10px 10px rgba(30, 30, 30, 0.696), 
+    5px -2px 1px rgb(255, 255, 255) inset, 
+    -2px 5px 10px #1f29379d inset;
+    border-radius: 50%;
+    transition: box-shadow 1s;
+
+}
+
+.theme-toggle-button:hover {
+    cursor: pointer;
+}
+
+.theme-toggle-container.dark .theme-toggle-button {
+    animation: rollback 1.5s forwards;
+}
+
+.theme-toggle-container.light .theme-toggle-button {
+    animation: roll 1.5s forwards;
+    
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(-95%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(95%) rotate(360deg);
+    }
+}
+
+@keyframes rollback {
+    0% {
+        transform: translateX(95%) rotate(360deg);
+    }
+    100% {
+        transform: translateX(-95%) rotate(0deg);
+    }
+}
+
+
+.theme-toggle-disclaimer-link {
+    text-decoration: none;
+    color: white;
+}
+
+.theme-toggle-disclaimer-link:hover {
+    font-weight: bolder;
+}
+
+/* Light mode styles */
+.theme-toggle-container.light {
+    background-color: rgb(253, 253, 253);
+    box-shadow: 10px 10px 10px rgb(242, 241, 241), -4px -7px 15px rgb(242, 241, 241), 2px -5px 10px rgb(255, 255, 255) inset, -10px -1px 5px yellow inset;
+}
+
+.theme-toggle-border.light {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 5px 10px rgb(236, 235, 235) inset, -2px 0px 2px rgb(254, 254, 1) inset;
+}
+
+.theme-toggle-button.light {
+    box-shadow: 5px 5px 500px rgb(255, 255, 0) inset, 0.5px 0.5px 50px yellow;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: orange;
+}
+
+
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[13].use[5]!./src/app/components/MainPage/Sidebar.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @keyframes blob-left-top-anim {
   0% {
-    transform: scale(0.5) translate(0, -100);
+    transform: scale(0.5) translate(0, -100px);
   }
   40% {
     transform: scale(1.1) translate(0, -3px);
@@ -93,65 +198,59 @@
   filter: url("#goo");
 }
 
-.menu-nav {
-  filter: url("#goo");
-}
-
-.gooey-container {
-  filter: url("#goo");
-}
-
-.gooey-item {
-  filter: url("#goo");
-}
-
 .animate.animate-item-1 {
-  animation: 1s blob-left-top-anim 0s ease-out forwards;
+  animation: 1.2s blob-left-top-anim 0s ease-out forwards;
 }
 .animate.animate-item-2 {
-  animation: 1s blob-right-top-anim 0.2s ease-out forwards;
+  animation: 1.2s blob-right-top-anim 0.2s ease-out forwards;
 }
 .animate.animate-item-3 {
-  animation: 1s blob-left-bottom-anim 0.4s ease-out forwards;
+  animation: 1.2s blob-left-bottom-anim 0.4s ease-out forwards;
 }
 .animate.animate-item-4 {
-  animation: 1s blob-right-bottom-anim 0.6s ease-out forwards;
+  animation: 1.2s blob-right-bottom-anim 0.6s ease-out forwards;
 }
 .animate.animate-item-5 {
-  animation: 1s blob-five 0.8s ease-out forwards;
+  animation: 1.2s blob-five 0.8s ease-out forwards;
 }
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/app/components/TopBar.css ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+
+.sidebar-footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px; /* Adjust padding as needed */
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/app/components/MainPage/TopBar.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
 .searchBar {
-    width: 60vw; /* Responsive width */
-    max-width: 65vw; /* Set a maximum width */
+    width: 60vw; 
+    max-width: 65vw; 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: auto auto; /* Center the search bar */
+
     margin-bottom: 5vh;
     background: #e5e7eb;
-    border-radius: 1rem; /* Rounded corners for the whole search bar */
-    padding: 0 ; /* Padding to align content */
-  }
+    border-radius: 1rem; 
+    padding: 0 ; 
+
+}
   
   #searchQueryInput {
     width: 100%;
-    height: 2.8rem;
-    background: #e5e7eb;
+    height: 100%;
+    background: transparent;
     outline: none;
     border: none;
-
     padding: 0;
     font-size: 1rem;
   }
   
   #searchQuerySubmit {
-    width: 2.5rem; /* Adjust width for better click area */
+    width: 2.5rem; 
     height: 2.8rem;
-    margin-left: -3rem; /* Adjust margin to keep the button in place */
     background: none;
     border: none;
     outline: none;
@@ -164,40 +263,4 @@
     cursor: pointer;
   }
   
-  /* Media Queries for responsiveness */
-  @media (max-width: 768px) {
-    .searchBar {
-      width: 40vw; /* Increase width on smaller screens */
-      padding: 0 ;
-      border-radius: 1rem;
-    }
-  
-    #searchQueryInput {
-      padding: 0 ; /* Adjust padding for smaller screens */
-      font-size: 0.9rem; /* Adjust font size */
-    }
-  
-    #searchQuerySubmit {
-      margin-left: -2.5rem; /* Adjust margin to keep the button aligned */
-      width: 2rem; /* Adjust width for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .searchBar {
-      width: 60vw; /* Almost full width on very small screens */
-      padding: 0 ;
-    }
-  
-    #searchQueryInput {
-        width: 100%;
-      padding: 0 ; /* Adjust padding for very small screens */
-      font-size: 0.85rem; /* Smaller font size for very small screens */
-    }
-  
-    #searchQuerySubmit {
-      margin-left: -2rem; /* Adjust margin for alignment */
-      width: 1.5rem; /* Smaller button size for very small screens */
-    }
-  }
   
