@@ -11,7 +11,7 @@ import "./Sidebar.scss";
 import { bouncingVariant, itemVariants, navVariants, buttonTapVariant } from "./../Animations/sliderAnimations";
 import { animateGooeyToCard } from "./../Animations/morphAnimation";
 
-export default function Sidebar({ refreshNotes, onAddNote }) {
+export default function Sidebar({ refreshNotes}) {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState("This is a note.");
   const [title, setTitle] = useState("Topic");
@@ -21,7 +21,6 @@ export default function Sidebar({ refreshNotes, onAddNote }) {
     setContent("This is a note.");
     setTitle("Topic")
     refreshNotes();
-    onAddNote(color);
   }
 
   return (

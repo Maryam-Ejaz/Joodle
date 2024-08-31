@@ -12,7 +12,7 @@ import { animateGooeyToCard } from "./components/Animations/morphAnimation";
 async function fetchNotes(query: string = '') {
   const pb = new PocketBase("https://pocketbase-production-782d.up.railway.app/");
   const filter = query ? `title ~ "${query}" || content ~ "${query}"` : '';
-  const response = await pb.collection("notes").getList(1, 50, { sort: '-created' });
+  const response = await pb.collection("notes").getList(1, 50, { filter, sort: '-created' });
   return response.items as any[];
 }
 
@@ -46,22 +46,11 @@ const NotesPage: React.FC = () => {
     setNotes(updatedNotes);
   };
 
-  // Function to handle note addition animation
-  const handleAddNote = () => {
-    setAddingNote(true);
-    // Trigger animation
-    setTimeout(() => {
-      if (newCardRef.current) {
-        // animateGooeyToCard(newCardRef.current);
-      }
-      setAddingNote(false);
-    }, 1000); // Match this duration with the animation time
-  };
 
   return (
     <ThemeProvider>
       <div className="flex w-screen overflow-x-hidden h-[100vh] overflow-y-hidden">
-        <Sidebar refreshNotes={refreshNotes} onAddNote={handleAddNote} /> 
+        <Sidebar refreshNotes={refreshNotes} /> 
         <div className="flex-1 pt-12 pl-10 mt-0 h-fit-content overflow-y-auto">
           <TopBar setSearchQuery={setSearchQuery} />
           <div className="flex flex-wrap gap-x-4 gap-y-4 h-fit-content overflow-x-hidden overflow-y-hidden">
